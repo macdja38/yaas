@@ -1,4 +1,4 @@
-docker_builder_master:
+docker_builder:
   only_if: $CIRRUS_BRANCH == 'master'
   env:
     DOCKER_USERNAME: ENCRYPTED[336eea1da19d314c77d77f8a3bc2e33360f4aaaf5b19fba5c02b6ddb97a5a7ca3c7976dcb6be9e9351ec618a67d63a92]
