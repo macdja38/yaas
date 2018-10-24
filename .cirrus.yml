@@ -1,15 +1,5 @@
-
-docker_builder:
-  only_if: $CIRRUS_TAG != ''
-  env:
-    DOCKER_USERNAME: ENCRYPTED[336eea1da19d314c77d77f8a3bc2e33360f4aaaf5b19fba5c02b6ddb97a5a7ca3c7976dcb6be9e9351ec618a67d63a92]
-    DOCKER_PASSWORD: ENCRYPTED[ab1b546d5a6fa8beaf832ca5e4d7b39e3ff96601a75597ff230625dbf546610e17a2e04f2e685091be2e144ebb1e85b9]
-  build_script: docker build --tag macdja38/yaas:$CIRRUS_TAG .
-  login_script: docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
-  push_script: docker push macdja38/yaas:$CIRRUS_TAG
-
 docker_builder_master:
-  only_if: $CIRRUS_TAG == '' && $CIRRUS_BRANCH == 'master'
+  only_if: $CIRRUS_BRANCH == 'master'
   env:
     DOCKER_USERNAME: ENCRYPTED[336eea1da19d314c77d77f8a3bc2e33360f4aaaf5b19fba5c02b6ddb97a5a7ca3c7976dcb6be9e9351ec618a67d63a92]
     DOCKER_PASSWORD: ENCRYPTED[ab1b546d5a6fa8beaf832ca5e4d7b39e3ff96601a75597ff230625dbf546610e17a2e04f2e685091be2e144ebb1e85b9]
