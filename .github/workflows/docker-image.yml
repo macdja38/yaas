@@ -22,6 +22,5 @@ jobs:
       uses: docker/build-push-action@v4.0.0
       with:
         push: true
-        tags: macdja38/yaas:$(date +%s)
-
+        tags: macdja38/yaas:latest
 
